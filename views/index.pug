@@ -1,13 +1,30 @@
 doctype html
 html
     head
-        title Home
+        title My web
+        link(rel='stylesheet' type='text/css' href='style.css')
     body
-        h1 Hello, i'm ThinhTheNguyen
-        ul 
-            li 
-                a(href="/") Home
-            li 
-                a(href="/users") User list
-
-        
+        #nav
+            ul.nav-menu
+                li.menu-item.brand My contact
+                li.menu-item
+                    a(href='#') Home
+                li.menu-item
+                    a(href='#') Users
+                li.menu-item
+                    a(href='#') Create User
+        #content
+            h1(style='text-align: center;') Users List
+            form#box-search
+                p Name
+                input(type='search' placeholder='   Enter name')
+                button Search
+            #list-users
+                .row
+                    p.name-column(style='font-weight: bold;') Name
+                    p.phone-column(style='font-weight: bold;') Phone
+                    p.action-column(style='font-weight: bold;') Action
+                .row
+                    p.name-user Nguy&#x1EC5;n th&#x1EBF; Th&#x1ECB;nh
+                    p.phone-user 0382977766
+                    button.action-user View

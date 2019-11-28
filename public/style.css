@@ -1,0 +1,117 @@
+body{
+    margin: 0px;
+}
+.nav-menu{
+    display: flex;
+    background-color: lightgray;
+    margin: 0px;
+}
+
+.menu-item{
+    padding: 10px 0px 10px;
+    list-style: none;
+    margin-right: 30px;
+}
+
+.menu-item > a{
+    text-decoration: none;
+    color: #7b7777;
+    font-size: 18px;
+    display: block;
+    padding: 5px 10px 5px 10px;
+}
+
+.brand{
+    margin-left: -20px;
+    margin-right: 60px;
+    color:#6b6868;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#box-search{
+    display: flex;
+    justify-content: center;
+}
+
+#box-search > p{
+    margin-right: 20px;
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+#box-search > input{
+    font-size: 18px;
+    width: 800px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 0px;
+    border-width: 0.5px;
+    margin-top: 5px;
+}
+
+#box-search > button{
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 40px;
+    width: 90px;
+    color: #626aa0;
+    border-width: 0px ;
+    font-size: 15px;
+}
+
+#list-users{
+    width: 970px;
+    margin: auto;
+}
+
+.row{
+    margin-top: 5px;
+    display: flex;
+    width: 970px;
+    height: 40px;
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #26292917;
+}
+
+.name-column{
+    margin-right: 398px;
+    margin-top: 13px;
+    font-size: 18px;
+}
+
+.phone-column{
+    margin-top: 13px;
+    font-size: 19px;
+    margin-right: 288px;
+}
+
+.action-column{
+    margin-top: 13px;
+    font-size: 19px;
+}
+
+.name-user{
+    display: block;
+    width: 443px;
+    /* margin-right: 400px; */
+    margin-top: 13px;
+    font-size: 18px;
+}
+
+.phone-user{
+    margin-top: 13px;
+    font-size: 18px;
+    display: block;
+    width: 342px;
+}
+
+.action-user{
+    margin-top: 13px;
+    font-size: 13px;
+    border-radius: 3px;
+    border-style: none;
+    width: 45px;
+}

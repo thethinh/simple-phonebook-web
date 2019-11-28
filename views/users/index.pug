@@ -16,13 +16,13 @@ html
             each user in users
                 li= user.name   
 
-        script(src='event.js')
-            //- //Code input text trong ô search box vẫn hiện khi click search
-            //- var input = document.getElementById('searchbox');
-            //- input.addEventListener('change',function(){
-            //-     sessionStorage.setItem('draft',input.value);
-            //- });
-            //- input.value = sessionStorage.getItem('draft'); 
+        //Code input text trong ô search box vẫn hiện khi click search
+        script.
+            var input = document.getElementById('searchbox');
+            input.addEventListener('change',function(){
+                sessionStorage.setItem('draft',input.value);
+            });
+            input.value = sessionStorage.getItem('draft'); 
 
             
         
