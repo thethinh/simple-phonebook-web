@@ -1,47 +1,44 @@
 var express = require('express');
 var app = express();
 var port = 1616;
+var low = require('lowdb');
+var FileSync = require('lowdb/adapters/FileSync');
+var adapter = new FileSync('db.json');
 
+db = low(adapter);
+ db.defaults({users: [] }).write();
 app.set('view engine','pug');
 app.set('views','./views');
 
 app.use(express.static('public'));
 
-
-var users=[
-    {id:1, name: 'Nguyễn Thế Thịnh',phone:'0382977766'},
-    {id:2, name: 'Kiều Trung Hiếu',phone:'039283747'},
-    {id:3, name: 'Vũ Mạnh Hiệp',phone:'03372974824'},
-    {id:4, name: 'Tăng Hoàng Anh',phone:'03372944444'},
-    {id:5, name: 'Nguyễn Thục Anh',phone:'0405974824'}
-];
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.get('/',(req,res)=>{
     res.render('index',{
-        users: users
-    });
-});
-
-app.get('/users',(req,res)=>{
-    res.render('users/index',{
-        users: users
+        users: db.get('users').value()
     });
 });
 
 app.get('/search',(req,res)=>{
     var q = req.query.q;
-    var matchussers = users.filter(function(user){
+    var matchussers = db.get('users').value().filter(function(user){
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1
     });
     res.render('index',{
         users: matchussers
-    })
-    console.log(req.query);
+    });
 });
 
 app.get('/create-user',(req,res)=>{
-    res.render('create_user')
-})
+    res.render('create_user');
+});
+
+app.post('/create-user',(req,res)=>{
+    db.get('users').push(req.body).write();
+    res.redirect('/');
+});
 app.listen(port,()=>{
     console.log('Sever listening on port'+port);
 });

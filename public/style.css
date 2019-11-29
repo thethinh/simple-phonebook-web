@@ -106,15 +106,21 @@ body{
     margin-top: 13px;
     font-size: 18px;
     display: block;
-    width: 342px;
+    width: 285px;
 }
 
 .action-user{
-    margin-top: 13px;
-    font-size: 13px;
-    border-radius: 3px;
-    border-style: none;
-    width: 45px;
+    text-align: center;
+    display: block;
+    border-radius: 4px;
+    background-color: #626aa042;
+    margin-top: 7px;
+    width: 53px;
+    height: 25px;
+    padding-top: 6px;
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
 #box-create{

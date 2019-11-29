@@ -15,11 +15,11 @@ html
                 a(href='/create-user') Create User
         #content
         h1(style='text-align:center') Create User
-        form#box-create
+        form#box-create(action="/create-user",method="POST")
             .area-row
                 p.label Name
-                input.input-label(type='text')
+                input.input-label(type='text', name="name")
             .area-row
                 p.label Phone
-                input.input-label(type='text')
+                input.input-label(type='text', name="phone")
             button.btn-sub(type='submit') Submit

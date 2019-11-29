@@ -28,4 +28,6 @@ html
                     .row              
                         p.name-user= item.name
                         p.phone-user= item.phone
-                        button.action-user View
+                        a(href="/user/"+item.id).action-user View
+                        a(href="#"+item.id).action-user Edit
+                        a(href="#"+item.id).action-user Delete
