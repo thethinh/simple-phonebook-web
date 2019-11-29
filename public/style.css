@@ -41,12 +41,13 @@ body{
 }
 
 #box-search > input{
+
     font-size: 18px;
     width: 800px;
     height: 40px;
     border-radius: 5px;
     margin-right: 10px;
-    padding: 0px;
+    padding: 0px 0px 0px 10px;
     border-width: 0.5px;
     margin-top: 5px;
 }
@@ -114,4 +115,40 @@ body{
     border-radius: 3px;
     border-style: none;
     width: 45px;
+}
+
+#box-create{
+    text-align: center;
+}
+
+.label{
+    display: inline;
+    font-size: 22px;
+}
+
+.input-label{
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: #c8c4ff;
+    margin-left: 10px;
+}
+
+.btn-sub{
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: #c8c4ff;
+}
+
+.area-row{
+    margin-top: 30px;
 }

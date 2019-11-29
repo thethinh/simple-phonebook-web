@@ -9,12 +9,17 @@ app.use(express.static('public'));
 
 
 var users=[
-    {id:1, name: 'Thịnh'},
-    {id:2, name: 'Hiếu'}
+    {id:1, name: 'Nguyễn Thế Thịnh',phone:'0382977766'},
+    {id:2, name: 'Kiều Trung Hiếu',phone:'039283747'},
+    {id:3, name: 'Vũ Mạnh Hiệp',phone:'03372974824'},
+    {id:4, name: 'Tăng Hoàng Anh',phone:'03372944444'},
+    {id:5, name: 'Nguyễn Thục Anh',phone:'0405974824'}
 ];
 
 app.get('/',(req,res)=>{
-    res.render('index');
+    res.render('index',{
+        users: users
+    });
 });
 
 app.get('/users',(req,res)=>{
@@ -23,16 +28,20 @@ app.get('/users',(req,res)=>{
     });
 });
 
-app.get('/users/search',(req,res)=>{
+app.get('/search',(req,res)=>{
     var q = req.query.q;
     var matchussers = users.filter(function(user){
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1
     });
-    res.render('users/index',{
+    res.render('index',{
         users: matchussers
     })
     console.log(req.query);
 });
+
+app.get('/create-user',(req,res)=>{
+    res.render('create_user')
+})
 app.listen(port,()=>{
     console.log('Sever listening on port'+port);
 });

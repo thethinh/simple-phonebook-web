@@ -8,23 +8,24 @@ html
             ul.nav-menu
                 li.menu-item.brand My contact
                 li.menu-item
-                    a(href='#') Home
+                    a(href='/') Home
                 li.menu-item
                     a(href='#') Users
                 li.menu-item
-                    a(href='#') Create User
+                    a(href='/create-user') Create User
         #content
             h1(style='text-align: center;') Users List
-            form#box-search
+            form#box-search(action="/search", method="GET")
                 p Name
-                input(type='search' placeholder='   Enter name')
+                input(type='text' placeholder='Enter name' name="q")
                 button Search
             #list-users
                 .row
                     p.name-column(style='font-weight: bold;') Name
                     p.phone-column(style='font-weight: bold;') Phone
-                    p.action-column(style='font-weight: bold;') Action
-                .row
-                    p.name-user Nguy&#x1EC5;n th&#x1EBF; Th&#x1ECB;nh
-                    p.phone-user 0382977766
-                    button.action-user View
+                    p.action-column(style='font-weight: bold;') Action  
+                each item in users
+                    .row              
+                        p.name-user= item.name
+                        p.phone-user= item.phone
+                        button.action-user View
