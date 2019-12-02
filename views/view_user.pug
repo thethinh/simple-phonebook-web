@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        title My web
+        link(rel='stylesheet' type='text/css' href='style.css')
+    body
+        #nav
+            ul.nav-menu
+                li.menu-item.brand My contact
+                li.menu-item
+                    a(href='/') Home
+                li.menu-item
+                    a(href='#') Users
+                li.menu-item
+                    a(href='/create-user') Create User
+        #content
+            h1(style='text-align: center;') View User
+            p
+                b name
+                span= user.name

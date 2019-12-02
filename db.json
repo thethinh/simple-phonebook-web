@@ -1,20 +1,14 @@
 {
   "users": [
     {
+      "name": "Nguyễn Thế Thịnh",
+      "phone": "0987766666",
+      "id": "XV-yul4k"
+    },
+    {
       "name": "Mạc Vân Anh",
-      "phone": "0987766666"
-    },
-    {
-      "name": "Kiều Trung Hiếu",
-      "phone": "0988776777"
-    },
-    {
-      "name": "Tăng Hoàng Anh",
-      "phone": "0398877766"
-    },
-    {
-      "name": "Nguyễn Thục Anh",
-      "phone": "098877666"
+      "phone": "0387655455",
+      "id": "w7kbeCda"
     }
   ]
 }

@@ -4,6 +4,7 @@ var port = 1616;
 var low = require('lowdb');
 var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('db.json');
+var shortid = require('shortid');
 
 db = low(adapter);
  db.defaults({users: [] }).write();
@@ -36,9 +37,18 @@ app.get('/create-user',(req,res)=>{
 });
 
 app.post('/create-user',(req,res)=>{
+    req.body.id = shortid.generate();
     db.get('users').push(req.body).write();
     res.redirect('/');
 });
+
+app.get('/user/:id',(req,res)=>{
+    var id = parseInt(req.params.id);
+    var user = db.get('users').find({id: id}).value();
+    res.render('../view_user',{
+        user: user
+    });
+})
 app.listen(port,()=>{
     console.log('Sever listening on port'+port);
 });
