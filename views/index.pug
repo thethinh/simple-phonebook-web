@@ -3,6 +3,7 @@ html
     head
         title My web
         link(rel='stylesheet' type='text/css' href='style.css')
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
     body
         #nav
             ul.nav-menu
@@ -25,9 +26,9 @@ html
                     p.phone-column(style='font-weight: bold;') Phone
                     p.action-column(style='font-weight: bold;') Action  
                 each item in users
-                    .row              
+                    .row             
                         p.name-user= item.name
                         p.phone-user= item.phone
-                        a(href="/user/"+item.id).action-user View
-                        a(href=""+item.id).action-user Edit
+                        a(href="/"+item.id).action-user View
+                        a(href="#"+item.id).action-user Edit
                         a(href="#"+item.id).action-user Delete

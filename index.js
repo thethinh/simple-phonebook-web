@@ -42,10 +42,10 @@ app.post('/create-user',(req,res)=>{
     res.redirect('/');
 });
 
-app.get('/user/:id',(req,res)=>{
-    var id = parseInt(req.params.id);
+app.get('/:id',(req,res)=>{
+    var id = req.params.id;
     var user = db.get('users').find({id: id}).value();
-    res.render('../view_user',{
+    res.render('view_user',{
         user: user
     });
 })
