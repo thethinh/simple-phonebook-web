@@ -1,0 +1,17 @@
+extends ../layouts/common
+block content
+    h1(style='text-align: center;') Users List
+    form#box-search(action="/search", method="GET")
+        p Name
+        input(type='text' placeholder='Enter name' name="q")
+        button Search
+    #list-users
+        .row
+            p.name-column(style='font-weight: bold;') Name
+            p.phone-column(style='font-weight: bold;') Phone
+            p.action-column(style='font-weight: bold;') Action  
+        each item in users
+            .row             
+                p.name-user= item.name
+                p.phone-user= item.phone
+                a(href="/"+item.id).action-user View
