@@ -3,7 +3,7 @@ block content
     h1(style='text-align: center;') Users List
     form#box-search(action="/search", method="GET")
         p Name
-        input(type='text' placeholder='Enter name' name="q")
+        input(type='text' placeholder='Enter name' name="q" value=value ? value.q : "")
         button Search
     #list-users
         .row

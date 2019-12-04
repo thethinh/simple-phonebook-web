@@ -7,7 +7,7 @@ block content
             label.brand_user ThinhBy
         .index_user
             label.label_user T&ecirc;n
-            input.input_user(readonly='' type='text' value=user.name)
+            input.input_user(readonly='' type='text' value=user ? user.name : "")
         .index_user
             label.label_user T&ecirc;n ng&#x1B0;&#x1EDD;i d&ugrave;ng
             input.input_user(readonly='' type='text' value='')
@@ -19,7 +19,7 @@ block content
             input.input_user(readonly='' type='text' value='')
         .index_user
             label.label_user &Dstrok;i&#x1EC7;n tho&#x1EA1;i
-            input.input_user(readonly='' type='text' value=user.phone)
+            input.input_user(readonly='' type='text' value=user ? user.phone : "")
         .index_user
             label.label_user Gi&#x1EDB;i t&iacute;nh
             input.input_user(readonly='' type='text' value='')

@@ -16,7 +16,8 @@ module.exports.getSearch = (req,res)=>{
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1
     });
     res.render('index/index',{
-        users: matchussers
+        users: matchussers,
+        value: req.query
     });
 };
 
