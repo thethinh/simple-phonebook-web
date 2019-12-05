@@ -1,8 +1,5 @@
-const app = require('express')()
 var db = require('../db');
 var shortid = require('shortid');
-
-
 
 module.exports.getIndex = (req,res)=>{
     res.render('index/index',{
@@ -35,22 +32,8 @@ module.exports.getView_user = (req,res)=>{
 
 module.exports.postCreate_user = (req,res)=>{
     req.body.id = shortid.generate();
-    var errors = [];
-
-    if(!req.body.name){
-        errors.push('Name is require !');
-    }
-    if(!req.body.phone){
-        errors.push('Phone is require !');
-    }
-
-    if(errors.length){ //falsy
-        res.render('index/create_user',{
-            errors: errors,
-            values: req.body
-        });
-        return;
-    }
+    
     db.get('users').push(req.body).write();
     res.redirect('/');
 };
+

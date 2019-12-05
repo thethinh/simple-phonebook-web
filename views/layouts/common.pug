@@ -2,6 +2,7 @@ doctype html
 html
     head
         link(rel='stylesheet' type='text/css' href='../style.css')
+        
     body
         #nav
             ul.nav-menu
@@ -12,6 +13,8 @@ html
                     a(href='#') Users
                 li.menu-item
                     a(href='/create-user') Create User
+                li.menu-item
+                    a(href='/user/login' role="button") Login 
         #content
             block content
         
