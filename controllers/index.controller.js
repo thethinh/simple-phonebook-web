@@ -30,10 +30,44 @@ module.exports.getView_user = (req,res)=>{
     });
 };
 
+
 module.exports.postCreate_user = (req,res)=>{
     req.body.id = shortid.generate();
     
     db.get('users').push(req.body).write();
     res.redirect('/');
 };
+
+module.exports.getLogin = (req,res)=>{
+    res.render('login/login');
+}
+
+module.exports.postLogin = (req,res)=>{
+    var email = req.body.email;
+    var password = req.body.password;
+    var user = db.get('users').find({email: email}).value();
+
+    if(!user){
+        res.render('index/login',{
+            errors:[
+                'User does not not exist.'
+            ],
+            values: req.body
+        });
+        return;
+    }
+
+    if(user.password !== password){
+        res.render('index/login',{
+            errors:[
+                'Wrong password.'
+            ],
+            values: req.body
+        });
+        return;
+    }
+
+    res.redirect('../user/index');
+}
+
 

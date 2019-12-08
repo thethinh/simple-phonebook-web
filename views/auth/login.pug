@@ -12,10 +12,10 @@ html
                 li.menu-item
                     a(href='/create-user') Create User
                 li.menu-item
-                    a(href='/user/login' role="button") Login 
+                    a(href='/auth/login' role="button") Login 
         .container(style='background-color: rgba(0,43,255,0.1); height: 600px; width: 600px;')
             h1(style='text-align: center; padding-top: 80px') Login
-            form(style='padding-top: 50px' method="POST")
+            form(style='padding-top: 50px' method="POST" )
                 if errors
                     each error in errors
                         .alert-danger
