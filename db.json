@@ -1,20 +1,11 @@
 {
   "users": [
     {
-      "name": "Mạc Vân Anh",
-      "phone": "0987766666"
-    },
-    {
-      "name": "Kiều Trung Hiếu",
-      "phone": "0988776777"
-    },
-    {
-      "name": "Tăng Hoàng Anh",
-      "phone": "0398877766"
-    },
-    {
-      "name": "Nguyễn Thục Anh",
-      "phone": "098877666"
+      "name": "Nguyễn Thế Thịnh",
+      "phone": "0987766666",
+      "id": "XV-yul4k",
+      "password": "123456",
+      "email": "nguyenthethinh16011998@gmail.com"
     }
   ]
 }

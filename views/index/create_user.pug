@@ -1,0 +1,17 @@
+extends ../layouts/common
+block content
+    h1(style='text-align:center') Create User
+
+    if errors
+        each error in errors
+            .alert-danger
+                .text-danger= error
+        
+    form#box-create(action="/create-user",method="POST")
+        .area-row
+            p.label Name
+            input.input-label(type='text', name="name",value=values ? values.name : "")
+        .area-row
+            p.label Phone
+            input.input-label(type='text', name="phone", value=values ? values.phone : "")
+        button.btn-sub(type='submit') Submit
