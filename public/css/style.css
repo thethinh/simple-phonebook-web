@@ -1,6 +1,12 @@
 body{
     margin: 0px;
 }
+
+#nav{
+    border-bottom-style: solid ;
+    border-bottom-width: 0.5px;
+    border-bottom-color: #969292;
+}
 .nav-menu{
     display: flex;
     background-color: lightgray;

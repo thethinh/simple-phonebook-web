@@ -16,5 +16,4 @@ router.get('/login',controller.getLogin);
 
 router.post('/create-user',validate.postCreate, controller.postCreate_user);
 
-
 module.exports = router;

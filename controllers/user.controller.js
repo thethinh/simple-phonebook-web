@@ -1,36 +1,5 @@
 var db = require('../db');
 
-module.exports.getLogin = (req,res)=>{
-    res.render('user/login');
-}
-
-module.exports.postLogin = (req,res)=>{
-    var email = req.body.email;
-    var password = req.body.password;
-    var user = db.get('users').find({email: email}).value();
-
-    if(!user){
-        res.render('user/login',{
-            errors:[
-                'User does not not exist.'
-            ],
-            values: req.body
-        });
-        return;
-    }
-
-    if(user.password !== password){
-        res.render('user/login',{
-            errors:[
-                'Wrong password.'
-            ],
-            values: req.body
-        });
-        return;
-    }
-
-    res.redirect('../user/index');
-}
 
 module.exports.getIndex = (req,res)=>{
     res.render('user/index',{
@@ -48,3 +17,4 @@ module.exports.getSearch = (req,res)=>{
         value: req.query
     });
 }
+

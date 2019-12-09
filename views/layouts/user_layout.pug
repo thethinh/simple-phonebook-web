@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        link(rel='stylesheet' type='text/css' href='../css/style.css')  
+        link(rel='stylesheet' type='text/css' href='./public/css/style.css')
         link(rel='stylesheet' type='text/css' href='./public/css/user.index.css')
         script(src='https://kit.fontawesome.com/1524deba00.js' crossorigin='anonymous')
     body
@@ -9,13 +9,11 @@ html
             ul.nav-menu
                 li.menu-item.brand My contact
                 li.menu-item
-                    a(href='/') Home
+                a(href='#') Home
                 li.menu-item
-                    a(href='/create-user') Create User
-                li.menu-item
-                    a(href='/auth/login' role="button") Login 
-        #content
-            block content
+                a(href='#' role='button')
+                    i.fas.fa-address-book &amp;nbsp Thinh
+        block content
         #footer
             #footer-head
                 #footer-head-contact
