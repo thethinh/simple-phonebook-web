@@ -1,0 +1,31 @@
+extends ../layouts/user_layout
+block content
+    #header
+        .area-avata
+            img.avata(src='../img/72532279_2307939882761756_2286473518457552896_n.jpg')
+        .area-text
+            .text-1
+                p.username= oneuser.username
+            .infor
+                p.name= oneuser.name
+                p.name &nbsp - &nbsp
+                p.name= oneuser.phone
+            a(style='text-decoration: none; font-size: 18px;' href=user.web target='blank')= oneuser.web
+    .allAvata
+        img.avata_tiny(src='../img/imgfooter/priscilla-du-preez-XkKCui44iM0-unsplash.jpg')
+        img.avata_tiny(src='../img/imgfooter/christin-hume-Hcfwew744z4-unsplash.jpg')
+        img.avata_tiny(src='../img/imgfooter/christin-hume-Hcfwew744z4-unsplash.jpg')
+        img.avata_tiny(src='../img/imgfooter/christin-hume-Hcfwew744z4-unsplash.jpg')
+        img.avata_tiny(src='../img/imgfooter/christin-hume-Hcfwew744z4-unsplash.jpg')
+    .area-status
+        h3(style='text-align: center; font-size: 13px;font-family: Arial, Helvetica, sans-serif;')
+            i.fas.fa-th
+            | &nbspSTATUS
+        a.link-status(href='#')
+            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
+        a.link-status(href='#')
+            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
+        a.link-status(href='#')
+            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
+        a.link-status(href='#')
+            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')

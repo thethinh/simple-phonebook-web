@@ -18,3 +18,15 @@ module.exports.getSearch = (req,res)=>{
     });
 }
 
+module.exports.getprofile = (req,res)=>{
+    res.render('user/wall_user');
+}
+
+module.exports.getview_user = (req,res)=>{
+    var id = req.params.id;
+    var user = db.get('users').find({id: id}).value();
+    res.render('user/view_user',{
+        oneuser: user
+    });
+}
+

@@ -5,7 +5,18 @@
       "phone": "0987766666",
       "id": "XV-yul4k",
       "password": "123456",
-      "email": "nguyenthethinh16011998@gmail.com"
+      "email": "nguyenthethinh16011998@gmail.com",
+      "username": "Thinhby",
+      "web": "https://www.facebook.com/Thinhby.1616.98"
+    },
+    {
+      "name": "Kiều Trung Hiếu",
+      "phone": "0382877111",
+      "id": "CB-ysl8o",
+      "password": "1111",
+      "email": "kthieu98@gmail.com",
+      "username": "TrungHieu",
+      "web": "https://www.facebook.com/hieu.kieu.773"
     }
   ]
 }

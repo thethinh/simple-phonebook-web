@@ -30,7 +30,6 @@ module.exports.getView_user = (req,res)=>{
     });
 };
 
-
 module.exports.postCreate_user = (req,res)=>{
     req.body.id = shortid.generate();
     

@@ -30,6 +30,6 @@ module.exports.postLogin = (req,res)=>{
         return;
     }
 
-    res.cookie('userId',user.id);
+    res.cookie('userId',user.id, { expires: new Date(Date.now() + 86400000)});
     res.redirect('../user/index');
 }
