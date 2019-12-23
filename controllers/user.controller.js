@@ -30,3 +30,15 @@ module.exports.getview_user = (req,res)=>{
     });
 }
 
+module.exports.getaddAvata = (req,res)=>{
+    res.render('user/addAvata');
+}
+
+module.exports.postaddAvata = (req,res)=>{
+    req.body.avata = req.file.path;
+    var user = db.get('users').find({id: req.cookies.userId}).value();
+    user.avata.push('/'+req.file.path.split('\\').slice(1).join('/'));
+    db.get('users').find({id: req.cookies.userId}).assign({avata: user.avata}).write();
+    res.redirect('../user/profile');
+}
+

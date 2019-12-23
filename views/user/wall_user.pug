@@ -2,8 +2,11 @@ extends ../layouts/user_layout
 block content
     #header
         .area-avata
-            a(href='#' style='text-decoration: none;')
-                img.avata(src='../img/72532279_2307939882761756_2286473518457552896_n.jpg' title='Edit image')
+            a(href='/user/addAvata' style='text-decoration: none;')
+                if user.avata.length === 0
+                    img.avata(src='/img/avata_default.png' title='Edit image')
+                else
+                    img.avata(src=user.avata[user.avata.length-1] title='Edit image')
         .area-text
             .text-1
                 p.username= user.username
@@ -16,7 +19,7 @@ block content
             a(style='text-decoration: none; font-size: 18px;' href=user.web target='blank')= user.web
     .allAvata
         a(href='#')
-            img.avata_tiny(src='../img/imgfooter/priscilla-du-preez-XkKCui44iM0-unsplash.jpg' title='Replace avata')
+            img.avata_tiny(src='/img/imgfooter/priscilla-du-preez-XkKCui44iM0-unsplash.jpg' title='Replace avata')
         a(href='#')
             img.avata_tiny(src='../img/imgfooter/christin-hume-Hcfwew744z4-unsplash.jpg' title='Replace avata')
         a(href='#')

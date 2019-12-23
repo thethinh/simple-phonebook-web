@@ -7,7 +7,14 @@
       "password": "123456",
       "email": "nguyenthethinh16011998@gmail.com",
       "username": "Thinhby",
-      "web": "https://www.facebook.com/Thinhby.1616.98"
+      "web": "https://www.facebook.com/Thinhby.1616.98",
+      "avata": [
+        "/img/imgAvata/881bb7e505ebf533f8f61af9869887d1",
+        "/img/imgAvata/9712ec382f1f11e0f92b42e94d047c4a",
+        "/img/imgAvata/234641a5b6424300cc242322a3c1618c",
+        "/img/imgAvata/84e6dffb93a2e63ffe297fd92ad8a85a",
+        "/img/imgAvata/cc5657f9ed9c66eac2241195749b8fd4"
+      ]
     },
     {
       "name": "Kiều Trung Hiếu",
@@ -16,7 +23,10 @@
       "password": "1111",
       "email": "kthieu98@gmail.com",
       "username": "TrungHieu",
-      "web": "https://www.facebook.com/hieu.kieu.773"
+      "web": "https://www.facebook.com/hieu.kieu.773",
+      "avata": [
+        "/img/imgAvata/8169a43f66b0ef4c4640c350056d12ea"
+      ]
     }
   ]
 }
