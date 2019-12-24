@@ -19,5 +19,7 @@ router.get('/addAvata',controller.getaddAvata);
 
 router.post('/addAvata',upload.single('avata'),controller.postaddAvata);
 
+router.get('/logout',controller.getLogout);
+
 //export
 module.exports = router;

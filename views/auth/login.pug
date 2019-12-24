@@ -20,7 +20,6 @@ html
                     each error in errors
                         .alert-danger
                             .text-danger= error
-            
                 .form-group
                     label(for='exampleInputEmail1') Email address
                     input#exampleInputEmail1.form-control(name='email' type='email' aria-describedby='emailHelp' placeholder='Enter email' value=values ? values.email : "")
@@ -29,6 +28,6 @@ html
                     label(for='exampleInputPassword1') Password
                     input#exampleInputPassword1.form-control(name='password' type='password' placeholder='Password' value=values ? values.password : "")
                 .form-check
-                    input#exampleCheck1.form-check-input(type='checkbox')
+                    input#exampleCheck1.form-check-input(type='checkbox' name='check')
                     label.form-check-label(for='exampleCheck1') Remeber me
                 button.btn.btn-primary Login

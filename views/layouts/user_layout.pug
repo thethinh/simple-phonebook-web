@@ -13,7 +13,9 @@ html
                 li.menu-item
                     a(href='/user/profile' role='button')
                         i.fas.fa-address-book= user.username
-                            
+                li.menu-item
+                    a(href='/user/logout')
+                        i.fas.fa-sign-out-alt Logout  
         block content
         #footer
             #footer-head
