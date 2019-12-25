@@ -36,9 +36,9 @@ module.exports.getaddAvata = (req,res)=>{
 
 module.exports.postaddAvata = (req,res)=>{
     req.body.avata = req.file.path;
-    var user = db.get('users').find({id: req.cookies.userId}).value();
+    var user = db.get('users').find({id: req.signedCookies.userId}).value();
     user.avata.push('/'+req.file.path.split('\\').slice(1).join('/'));
-    db.get('users').find({id: req.cookies.userId}).assign({avata: user.avata}).write();
+    db.get('users').find({id: req.signedCookies.userId}).assign({avata: user.avata}).write();
     res.redirect('../user/profile');
 };
 

@@ -1,7 +1,7 @@
 var db = require('../db');
 var md5 = require('md5');
 module.exports.getLogin = (req,res)=>{
-    if(req.cookies.userId)
+    if(req.signedCookies.userId)
     {
         res.redirect('../user/index');
     }
@@ -33,13 +33,7 @@ module.exports.postLogin = (req,res)=>{
         });
         return;
     }
-    if(req.body.check){
-        res.cookie('userId',user.id, { expires: new Date(Date.now() + 864000000)});
-        res.redirect('../user/index'); 
-    }
-    else if(!req.body.check){
-        res.cookie('userId',user.id,{ expires: 0});
-        res.redirect('../user/index');    
-    }
+    res.cookie('userId',user.id, { expires: new Date(Date.now() + 864000000), signed: true});
+    res.redirect('../user/index');
 
 }
