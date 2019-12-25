@@ -12,8 +12,10 @@ html
                     a(href='/user/index') Home
                 li.menu-item
                     a(href='/user/profile' role='button')
-                        if(user)
+                        if(user.username)
                             i.fas.fa-address-book= user.username
+                        else
+                            i.fas.fa-address-book= user.name
                 li.menu-item
                     a(href='/user/logout')
                         i.fas.fa-sign-out-alt Logout  

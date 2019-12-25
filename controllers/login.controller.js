@@ -1,5 +1,6 @@
 var db = require('../db');
 var md5 = require('md5');
+var shortid = require('shortid');
 module.exports.getLogin = (req,res)=>{
     if(req.signedCookies.userId)
     {
@@ -36,4 +37,29 @@ module.exports.postLogin = (req,res)=>{
     res.cookie('userId',user.id, { expires: new Date(Date.now() + 864000000), signed: true});
     res.redirect('../user/index');
 
+}
+
+module.exports.getSubscribe = (req,res)=>{
+    res.render('auth/subscribe');
+}
+
+module.exports.postSubscribe = (req,res)=>{
+    var data = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        phone:"",
+        username: "",
+        web: "",
+        avata: [],
+        id: shortid.generate()
+    };
+    db.get('users').push(data).write();
+    if(db.get('users').find({id: data.id}).value()){
+        res.render('auth/subscribe',{
+            message: [
+                "Đăng kí thành công"
+            ]
+        });
+    }
 }
