@@ -25,7 +25,7 @@ module.exports.postLogin = (req,res)=>{
     }
     
     var hashPass = md5(password);
-    if(user.password !== password){
+    if(user.password !== hashPass){
         res.render('auth/login',{
             errors:[
                 'Wrong password.'
@@ -43,10 +43,11 @@ module.exports.getSubscribe = (req,res)=>{
 }
 
 module.exports.postSubscribe = (req,res)=>{
+    var hashPass = md5(req.body.password);
     var data = {
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password,
+        password: hashPass,
         phone: req.body.phone,
         username: req.body.username,
         web: "",
