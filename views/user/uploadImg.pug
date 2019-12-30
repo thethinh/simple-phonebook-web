@@ -19,13 +19,8 @@ html
                     a(href='/user/logout')
                         i.fas.fa-sign-out-alt Logout  
         #content
-            form(action="/user/addAvata" method="POST" enctype="multipart/form-data")
+            form(action="/user/upload_img" method="POST" enctype="multipart/form-data")
                 .form-group
-                    label(for='avata') Create avata
-                    input#exampleFormControlFile1.form-control-file(name='avata' type='file')
+                    label(for='status') Upload status
+                    input#exampleFormControlFile1.form-control-file(name='status' type='file')
                 button.btn-sub(type='submit' style='float:left') Submit
-        
-
-
-
-

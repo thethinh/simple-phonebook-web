@@ -11,7 +11,7 @@ block content
             .text-1
                 p.username= user.username
                 a.btn-profile(href='/user/edit_profile') Edit profile
-                a.btn-profile(href='#') Upload image
+                a.btn-profile(href='/user/upload_img') Upload image
             .infor
                 p.name= user.name
                 p.name &nbsp - &nbsp
@@ -50,11 +50,6 @@ block content
         h3(style='text-align: center; font-size: 13px;font-family: Arial, Helvetica, sans-serif;')
             i.fas.fa-th
             | &nbspSTATUS
-        a.link-status(href='#')
-            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
-        a.link-status(href='#')
-            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
-        a.link-status(href='#')
-            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
-        a.link-status(href='#')
-            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
+        each item in user.status
+            a.link-status(href='#')
+                img.img-status(src='..'+ item)

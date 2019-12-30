@@ -51,6 +51,7 @@ module.exports.postSubscribe = (req,res)=>{
         username: req.body.username,
         web: "",
         avata: [],
+        status: [],
         id: shortid.generate()
     };
     db.get('users').push(data).write();

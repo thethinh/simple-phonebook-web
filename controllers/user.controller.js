@@ -1,6 +1,6 @@
 var db = require('../db');
 
-
+//get method
 module.exports.getIndex = (req,res)=>{
     res.render('user/index',{
         users: db.get('users').value()
@@ -34,14 +34,6 @@ module.exports.getaddAvata = (req,res)=>{
     res.render('user/addAvata');
 };
 
-module.exports.postaddAvata = (req,res)=>{
-    req.body.avata = req.file.path;
-    var user = db.get('users').find({id: req.signedCookies.userId}).value();
-    user.avata.push('/'+req.file.path.split('\\').slice(1).join('/'));
-    db.get('users').find({id: req.signedCookies.userId}).assign({avata: user.avata}).write();
-    res.redirect('../user/profile');
-};
-
 module.exports.getLogout = (req,res)=>{
     res.clearCookie('userId');
     res.redirect('../auth/login');
@@ -51,6 +43,11 @@ module.exports.getEditProfile = (req,res)=>{
     res.render('user/profile_user');
 }
 
+module.exports.getUploadImg = (req,res)=>{
+    res.render('user/uploadImg');
+}
+
+//post mehtod
 module.exports.postEditProfile = (req,res)=>{
     db.get('users').find({id: req.signedCookies.userId}).assign({
         name : req.body.name,
@@ -62,3 +59,19 @@ module.exports.postEditProfile = (req,res)=>{
     res.redirect('../user/profile');
 }
 
+module.exports.postaddAvata = (req,res)=>{
+    req.body.avata = req.file.path;
+    var user = db.get('users').find({id: req.signedCookies.userId}).value();
+    user.avata.push('/'+req.file.path.split('\\').slice(1).join('/'));
+    db.get('users').find({id: req.signedCookies.userId}).assign({avata: user.avata}).write();
+    res.redirect('../user/profile');
+};
+
+module.exports.postUploadImg = (req,res)=>{
+    req.body.status = req.file.path;
+    var user = db.get('users').find({id: req.signedCookies.userId}).value();
+    user.status.push('/'+req.file.path.split('\\').slice(1).join('/'));
+    db.get('users').find({id: req.signedCookies.userId}).assign({status: user.status}).write();
+    res.redirect('../user/profile');
+
+}

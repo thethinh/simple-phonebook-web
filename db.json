@@ -26,6 +26,13 @@
         "/img/imgAvata/cdae9dac5dd2643c82cf6174047c3997",
         "/img/imgAvata/58c1828778ca838076cc2daa56c012fc",
         "/img/imgAvata/946507e64e262cba4677725b41f4552e"
+      ],
+      "status": [
+        "/img/imgAvata/b3e9fe65662ef4b5e1d3efa6e73457a0",
+        "/img/imgAvata/ed517af3d91c310b09e4d37a9edaaf9f",
+        "/img/imgAvata/a98a606a3b2622c0a7e653c2ffb4cf38",
+        "/img/imgAvata/6c928ca27ac2b0e13a8f264541754253",
+        "/img/imgAvata/c755176bb8b1f3d36d8b8f4a40fe7cbc"
       ]
     },
     {
@@ -41,17 +48,21 @@
         "/img/imgAvata/11153e95b15f07f0c6e8fbc9d284b293",
         "/img/imgAvata/9426106fb5373f3f17282bdddb395cfe",
         "/img/imgAvata/1adddee038c3edceaa7c82fb77b61988"
-      ]
+      ],
+      "status": []
     },
     {
       "name": "Tăng Hoàng Anh",
       "email": "hoanganh2812@gmail.com",
       "password": "12345678",
       "phone": "029384746",
-      "username": "",
-      "web": "",
+      "username": "anhanhh",
+      "web": "https://www.instagram.com/thinhby/",
       "avata": [
         "/img/imgAvata/46555eb17583f7f0459ab36b84329d75"
+      ],
+      "status": [
+        "/img/imgAvata/bc716383673c61bf49590d36c381e790"
       ],
       "id": "FgxJlpFu"
     },
@@ -63,12 +74,8 @@
       "username": "sonkhanh",
       "web": "",
       "avata": [],
+      "status": [],
       "id": "JmSBba1s"
-    },
-    {
-      "name": "Nguyễn Trung Kiên",
-      "phone": "29383",
-      "id": "yVnNuCls"
     }
   ]
 }
