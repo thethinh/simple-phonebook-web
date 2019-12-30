@@ -10,7 +10,7 @@ block content
         .area-text
             .text-1
                 p.username= user.username
-                a.btn-profile(href='#') Edit profile
+                a.btn-profile(href='/user/edit_profile') Edit profile
                 a.btn-profile(href='#') Upload image
             .infor
                 p.name= user.name
@@ -19,10 +19,7 @@ block content
             a(style='text-decoration: none; font-size: 18px;' href=user.web target='blank')= user.web
     .allAvata
         - var size = user.avata.length;
-        if (size === 0)
-            a(href='#')
-                img.avata_tiny(src='/img/avata_default.png' title='Replace avata')
-        else if (size === 1)
+        if (size === 1)
             a(href='#')
                 img.avata_tiny(src=user.avata[0] title='Replace avata')
         else if (size === 2)

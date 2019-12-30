@@ -17,35 +17,27 @@ block content
     .allAvata
         - var size = oneuser.avata.length;
         if (size === 0)
-            a(href='#')
-                img.avata_tiny(src='/img/avata_default.png' title='Replace avata')
+            img.avata_tiny(src='/img/avata_default.png')
         else if (size === 1)
-            a(href='#')
-                img.avata_tiny(src=oneuser.avata[0] title='Replace avata')
+            img.avata_tiny(src=oneuser.avata[0])
         else if (size === 2)
-             each val in [0,1]
-                a(href='#')
-                    img.avata_tiny(src=oneuser.avata[val] title='Replace avata')
+            each val in [0,1]
+                img.avata_tiny(src=oneuser.avata[val])
         else if (size === 3)
-             each val in [0,1,2]
-                a(href='#')
-                    img.avata_tiny(src=oneuser.avata[val] title='Replace avata')
+            each val in [0,1,2]
+                img.avata_tiny(src=oneuser.avata[val])
         else if (size === 4)
-             each val in [0,1,2,3]
-                a(href='#')
-                    img.avata_tiny(src=oneuser.avata[val] title='Replace avata')
+            each val in [0,1,2,3]
+                img.avata_tiny(src=oneuser.avata[val])
         else if (size === 5)
             each val in [0,1,2,3,4]
-                a(href='#')
-                    img.avata_tiny(src=oneuser.avata[val] title='Replace avata')
+                img.avata_tiny(src=oneuser.avata[val])
         else if (size ===6)
             each val in [0,1,2,3,4,5]
-                a(href='#')
-                    img.avata_tiny(src=oneuser.avata[val] title='Replace avata')
+                img.avata_tiny(src=oneuser.avata[val])
         else if (size > 6)
             each val in [size-2, size-3, size-4, size-5, size-6, size-7]
-                a(href='#')
-                    img.avata_tiny(src=oneuser.avata[val] title='Replace avata')
+                img.avata_tiny(src=oneuser.avata[val])
     .area-status
         h3(style='text-align: center; font-size: 13px;font-family: Arial, Helvetica, sans-serif;')
             i.fas.fa-th

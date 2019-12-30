@@ -1,0 +1,74 @@
+doctype html
+html
+    head
+        link(rel='stylesheet' type='text/css' href='../css/style.css')  
+        link(rel='stylesheet' type='text/css' href='../css/user.index.css')
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+        script(src='https://kit.fontawesome.com/1524deba00.js' crossorigin='anonymous')
+    body
+        #nav
+            ul.nav-menu
+                li.menu-item.brand My contact
+                li.menu-item
+                    a(href='/user/index') Home
+                li.menu-item
+                    a(href='/user/profile' role='button')
+                        if(user.username)
+                            i.fas.fa-address-book= user.username
+                        else
+                            i.fas.fa-address-book= user.name
+                li.menu-item
+                    a(href='/user/logout')
+                        i.fas.fa-sign-out-alt Logout  
+        .container(style='background-color: rgba(0,43,255,0.1); height: 600px; width: 800px;')
+            h1(style='text-align: center; padding-top: 50px; padding-bottom: 50px') Edit profile
+            form.needs-validation(novalidate method="POST" action="/user/edit_profile")
+                .form-row
+                    .col-md-4.mb-3
+                        label(for='validationCustom01') Email
+                        input#validationCustom01.form-control(type='email' name='email' placeholder='First name' required value= user ? user.email : "")
+                        .valid-feedback Looks good!
+                        .invalid-feedback Email is require !
+                    .col-md-4.mb-3
+                        label(for='validationCustom02') Fullname
+                        input#validationCustom02.form-control(type='text' name='name' required value= user ? user.name : "")
+                        .valid-feedback Looks good!
+                        .invalid-feedback Fullname is require !
+                    .col-md-4.mb-3
+                        label(for='validationCustomUsername') Username
+                        .input-group
+                            .input-group-prepend
+                            span#inputGroupPrepend.input-group-text @
+                            input#validationCustomUsername.form-control(type='text' name='username' aria-describedby='inputGroupPrepend' value= user ? user.username : "")
+                            .valid-feedback Looks good!
+                .form-row
+                    .col-md-6.mb-3
+                        label(for='validationCustom03') Trang web
+                        input#validationCustom03.form-control(type='link' name='web' value= user ? user.web : "")
+                        .valid-feedback Looks good!
+                    .col-md-3.mb-3
+                        label(for='validationCustom04') Phone
+                        input#validationCustom04.form-control(type='phone' name='phone' required value= user ? user.phone : "")
+                        .invalid-feedback Phone is require !
+                        .valid-feedback Looks good!
+                button.btn.btn-primary(type='submit') Submit
+        
+        script.
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();

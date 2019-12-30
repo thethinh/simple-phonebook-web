@@ -21,5 +21,9 @@ router.post('/addAvata',upload.single('avata'),controller.postaddAvata);
 
 router.get('/logout',controller.getLogout);
 
+router.get('/edit_profile',controller.getEditProfile);
+
+router.post('/edit_profile',controller.postEditProfile);
+
 //export
 module.exports = router;

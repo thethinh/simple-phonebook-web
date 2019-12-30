@@ -2,12 +2,12 @@
   "users": [
     {
       "name": "Nguyễn Thế Thịnh",
-      "phone": "0987766666",
+      "phone": "0382977766",
       "id": "XV-yul4k",
       "password": "123456",
       "email": "nguyenthethinh16011998@gmail.com",
       "username": "Thinhby",
-      "web": "https://www.facebook.com/Thinhby.1616.98",
+      "web": "https://www.instagram.com/thinhby/",
       "avata": [
         "/img/imgAvata/0a934c20d6bf82192ee103e9d27ca4dc",
         "/img/imgAvata/f3ebeb65c61ec316755dd350fbf9af9e",
@@ -24,7 +24,8 @@
         "/img/imgAvata/acce098e69c6f9f68534bf917463da32",
         "/img/imgAvata/3b6ea545c59423198f329a10d352c90b",
         "/img/imgAvata/cdae9dac5dd2643c82cf6174047c3997",
-        "/img/imgAvata/58c1828778ca838076cc2daa56c012fc"
+        "/img/imgAvata/58c1828778ca838076cc2daa56c012fc",
+        "/img/imgAvata/946507e64e262cba4677725b41f4552e"
       ]
     },
     {
@@ -43,14 +44,31 @@
       ]
     },
     {
-      "name": "Mạc Vân Anh",
-      "email": "nguyenthinh9898@yahoo.com",
-      "password": "123456",
-      "phone": "",
+      "name": "Tăng Hoàng Anh",
+      "email": "hoanganh2812@gmail.com",
+      "password": "12345678",
+      "phone": "029384746",
       "username": "",
       "web": "",
+      "avata": [
+        "/img/imgAvata/46555eb17583f7f0459ab36b84329d75"
+      ],
+      "id": "FgxJlpFu"
+    },
+    {
+      "name": "Nguyễn Hữu Sơn",
+      "email": "son@gmail.com",
+      "password": "1111",
+      "phone": "03938475",
+      "username": "sonkhanh",
+      "web": "",
       "avata": [],
-      "id": "iDlZPihR"
+      "id": "JmSBba1s"
+    },
+    {
+      "name": "Nguyễn Trung Kiên",
+      "phone": "29383",
+      "id": "yVnNuCls"
     }
   ]
 }

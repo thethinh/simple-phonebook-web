@@ -34,9 +34,8 @@ module.exports.postLogin = (req,res)=>{
         });
         return;
     }
-    res.cookie('userId',user.id, { expires: new Date(Date.now() + 864000000), signed: true});
+    res.cookie('userId',user.id, { expires: new Date(Date.now() + 86400000), signed: true});
     res.redirect('../user/index');
-
 }
 
 module.exports.getSubscribe = (req,res)=>{
@@ -48,18 +47,12 @@ module.exports.postSubscribe = (req,res)=>{
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
-        phone:"",
-        username: "",
+        phone: req.body.phone,
+        username: req.body.username,
         web: "",
         avata: [],
         id: shortid.generate()
     };
     db.get('users').push(data).write();
-    if(db.get('users').find({id: data.id}).value()){
-        res.render('auth/subscribe',{
-            message: [
-                "Đăng kí thành công"
-            ]
-        });
-    }
+    res.redirect('../auth/login');
 }

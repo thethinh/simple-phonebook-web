@@ -47,3 +47,18 @@ module.exports.getLogout = (req,res)=>{
     res.redirect('../auth/login');
 };
 
+module.exports.getEditProfile = (req,res)=>{
+    res.render('user/profile_user');
+}
+
+module.exports.postEditProfile = (req,res)=>{
+    db.get('users').find({id: req.signedCookies.userId}).assign({
+        name : req.body.name,
+        email : req.body.email,
+        phone : req.body.phone,
+        web : req.body.web,
+        username : req.body.username
+    }).write();
+    res.redirect('../user/profile');
+}
+

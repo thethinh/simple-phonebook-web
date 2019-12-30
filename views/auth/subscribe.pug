@@ -1,37 +1,53 @@
-doctype html
-html
-    head
-        link(rel='stylesheet' type='text/css' href='../css/style.css')
-        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-    body
-        #nav
-            ul.nav-menu
-                li.menu-item.brand My contact
-                li.menu-item
-                    a(href='/') Home
-                //- li.menu-item
-                //-     a(href='/create-user') Create User
-                li.menu-item
-                    a(href='/auth/login' role="button") Login 
-        .container(style='background-color: rgba(0,43,255,0.1); height: 600px; width: 600px;')
-            if message
-                each item in message
-                    .alert-danger
-                        .text-danger= item
-            h1(style='text-align: center; padding-top: 80px') Đăng ký
-            form(style='padding-top: 50px' method="POST" action="/auth/subscribe" )
-                if errors
-                    each error in errors
-                        .alert-danger
-                            .text-danger= error
-                .form-group
-                    label(for='exampleInputEmail1') Email address
-                    input#exampleInputEmail1.form-control(name='email' type='email' aria-describedby='emailHelp' placeholder='Enter email')
-                    small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
-                .form-group
-                    label(for='exampleInputPassword1') Họ và tên
-                    input#exampleInputPassword1.form-control(name='name' type='text' placeholder='Enter fullname')
-                .form-group
-                    label(for='exampleInputPassword1') Password
-                    input#exampleInputPassword1.form-control(name='password' type='password' placeholder='Password')
-                button.btn.btn-primary Subscribe
+extends ../layouts/layout_auth
+block content
+    .container(style='background-color: rgba(0,43,255,0.1); height: 600px; width: 600px;')
+        h1(style='text-align: center; padding-top: 50px; padding-bottom: 50px') Subscribe
+        form.needs-validation(novalidate method="POST" )
+            .form-row
+                .col-md-4.mb-3
+                    label(for='validationCustom01') Email
+                    input#validationCustom01.form-control(type='email' name='email' placeholder='First name' required)
+                    .valid-feedback Looks good!
+                    .invalid-feedback Email is require !
+                .col-md-4.mb-3
+                    label(for='validationCustom02') Fullname
+                    input#validationCustom02.form-control(type='text' name='name' placeholder='Họ và tên' required)
+                    .valid-feedback Looks good!
+                    .invalid-feedback Fullname is require !
+                .col-md-4.mb-3
+                    label(for='validationCustomUsername') Username
+                    .input-group
+                        .input-group-prepend
+                        span#inputGroupPrepend.input-group-text @
+                        input#validationCustomUsername.form-control(type='text' name='username' placeholder='Tên người dùng' aria-describedby='inputGroupPrepend')
+            .form-row
+                .col-md-6.mb-3
+                    label(for='validationCustom03') Password
+                    input#validationCustom03.form-control(type='password' name='password' placeholder='Password' required)
+                    .invalid-feedback Please provide a valid password.
+                .col-md-3.mb-3
+                    label(for='validationCustom04') Phone
+                    input#validationCustom04.form-control(type='phone' name='phone' placeholder='phone' required)
+                    .invalid-feedback Phone is require !
+                    .valid-feedback Looks good!
+            button.btn.btn-primary(type='submit') Subscribe
+    
+    script.
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
