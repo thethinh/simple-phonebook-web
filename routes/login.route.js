@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var controller = require('../controllers/login.controller')
-var validate = require('../validate/subscribe.validate');
 
 router.get('/login',controller.getLogin);
 

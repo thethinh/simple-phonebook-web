@@ -2,8 +2,22 @@ var db = require('../db');
 
 //get method
 module.exports.getIndex = (req,res)=>{
+    var usera = db.get('users').value().length;
+    var pageNumber = (usera % 5 === 0) ? Math.floor(usera/5) : Math.floor(usera/5 + 1);
+    var totalPage=[];
+    for(let item=1; item<=pageNumber; ++item)
+    {
+        totalPage.push(item);
+    }
+    
+    
+    var page = parseInt(req.query.page) || 1;
+    var perPage = 5;
+    var begin = (page-1) * perPage;
+    var end = page * perPage;
     res.render('user/index',{
-        users: db.get('users').value()
+        totalPage : totalPage,
+        users: db.get('users').value().slice(begin,end)
     });
 };
 

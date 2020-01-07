@@ -16,9 +16,7 @@ block content
             a(style='text-decoration: none; font-size: 18px;' href=user.web target='blank')= oneuser.web
     .allAvata
         - var size = oneuser.avata.length;
-        if (size === 0)
-            img.avata_tiny(src='/img/avata_default.png')
-        else if (size === 1)
+        if (size === 1)
             img.avata_tiny(src=oneuser.avata[0])
         else if (size === 2)
             each val in [0,1]
@@ -37,16 +35,11 @@ block content
                 img.avata_tiny(src=oneuser.avata[val])
         else if (size > 6)
             each val in [size-2, size-3, size-4, size-5, size-6, size-7]
-                img.avata_tiny(src=oneuser.avata[val])
+                img.avata_tiny(src=oneuser.avata[val]) 
     .area-status
-        h3(style='text-align: center; font-size: 13px;font-family: Arial, Helvetica, sans-serif;')
+        .text-status
             i.fas.fa-th
             | &nbspSTATUS
-        a.link-status(href='#')
-            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
-        a.link-status(href='#')
-            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
-        a.link-status(href='#')
-            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
-        a.link-status(href='#')
-            img.img-status(src='../img/imgfooter/providence-doucet-mE5MBZX5sko-unsplash.jpg')
+        each item in oneuser.status
+            a.link-status(href='#')
+                img.img-status(src='..'+ item)            
