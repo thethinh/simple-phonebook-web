@@ -1,0 +1,7 @@
+extends ../layouts/user_layout
+block content
+    form(action="/user/upload_img" method="POST" enctype="multipart/form-data")
+        .form-group
+            label(for='status') Upload status
+            input#exampleFormControlFile1.form-control-file(name='status' type='file')
+        button.btn-sub(type='submit' style='float:left') Submit

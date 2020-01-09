@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        link(rel='stylesheet' type='text/css' href='../css/style.css')  
+        link(rel='stylesheet' type='text/css' href='../css/user.index.css')
+        script(src='https://kit.fontawesome.com/1524deba00.js' crossorigin='anonymous')
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    body
+        #nav
+            ul.nav-menu
+                li.menu-item.brand My contact
+                li.menu-item
+                    a(href='/user/index') Home
+                li.menu-item
+                    a(href='/user/profile' role='button')
+                        if(user.username)
+                            i.fas.fa-address-book= user.username
+                        else
+                            i.fas.fa-address-book= user.name
+                li.menu-item
+                    a(href='/user/logout')
+                        i.fas.fa-sign-out-alt Logout  
+        block content        
+    

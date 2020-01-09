@@ -1,6 +1,12 @@
 body{
     margin: 0px;
 }
+
+#nav{
+    border-bottom-style: solid ;
+    border-bottom-width: 0.5px;
+    border-bottom-color: #969292;
+}
 .nav-menu{
     display: flex;
     background-color: lightgray;
@@ -112,16 +118,16 @@ body{
 }
 
 .action-user{
-    margin-left: 40px;
+    margin-left: 52px;
     text-align: center;
     display: block;
     border-radius: 4px;
     background-color: #626aa042;
     margin-top: 7px;
     width: 53px;
-    height: 25px;
-    padding-top: 6px;
-    font-size: 18px;
+    height: 30px;
+    padding-top: 3px;
+    font-size: 16px;
     margin-right: 10px;
     text-decoration: none;
 }

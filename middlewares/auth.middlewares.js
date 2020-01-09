@@ -1,9 +1,9 @@
 var db = require('../db');
 
 module.exports.requireAuth = (req,res,next)=>{
-    var user = db.get('users').find({id: req.cookies.userId}).value();
+    var user = db.get('users').find({id: req.signedCookies.userId}).value();
 
-    if(!req.cookies.userId){
+    if(!req.signedCookies.userId){
         res.redirect('/auth/login');
         return;
     }
@@ -11,5 +11,6 @@ module.exports.requireAuth = (req,res,next)=>{
         res.redirect('/auth/login');
         return;
     }
+    res.locals.user = user;
     next();
 }

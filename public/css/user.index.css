@@ -3,3 +3,125 @@
     height: auto;
     margin: auto;
 }
+
+#header{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.area-avata{
+    margin-right: 100px;
+}
+
+
+.avata{
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+}
+
+.text-1{
+    display: flex;
+    width: auto;
+    height: 60px;
+}
+
+.username{
+    font-size: 30px;
+    display: block;
+    margin-right: 20px;
+    color: #757677c9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-profile{
+    text-align: center;
+    display: block;
+    border-radius: 4px;
+    background-color:#fbf7f742;
+    width: 100px;
+    height: 34px;
+    padding-top: 8px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-right: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    color: black;
+    border-color: #17171736;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.name{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.infor{
+    display: flex;
+}
+
+.allAvata{
+    display: flex;
+    margin-left: 380px;
+    margin-top: 50px;
+}
+
+.avata_tiny{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #a2a2a224;
+    margin-right: 15px;
+}
+
+.area-status{
+    width: 935px;
+    height: auto;
+    border-top-style: solid;
+    border-top-width: 0.5px;
+    margin: auto;
+    margin-top: 70px;
+    border-color: #969292d9;
+}
+.img-status{
+    height: 293px;
+    width: 293px;
+    margin-bottom: 14px;
+}
+
+.link-status{
+    margin-right: 18px;
+    text-decoration: none;
+}
+
+.text-status{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 16px;
+}
+
+.text-status::before{
+    position: relative;
+    background: #1b1b1b;
+    display: block;
+    height: 1.5px;
+    width: 56px;
+    content: "";
+    left: 440px;
+    top: -16px;
+}
+
+.page{
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 180px;
+}
+

@@ -10,16 +10,13 @@ block content
             input.input_user(readonly='' type='text' value=user ? user.name : "")
         .index_user
             label.label_user T&ecirc;n ng&#x1B0;&#x1EDD;i d&ugrave;ng
-            input.input_user(readonly='' type='text' value='')
+            input.input_user(readonly='' type='text' value=user ? user.username : "")
         .index_user
             label.label_user Trang web
-            input.input_user(readonly='' type='text' value='')
+            input.input_user(readonly='' type='text' value=user ? user.web : "" )
         .index_user
             label.label_user Email
-            input.input_user(readonly='' type='text' value='')
+            input.input_user(readonly='' type='text' value=user ? user.email : "")
         .index_user
             label.label_user &Dstrok;i&#x1EC7;n tho&#x1EA1;i
             input.input_user(readonly='' type='text' value=user ? user.phone : "")
-        .index_user
-            label.label_user Gi&#x1EDB;i t&iacute;nh
-            input.input_user(readonly='' type='text' value='')
