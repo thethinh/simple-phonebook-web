@@ -11,20 +11,25 @@ block content
                 p.name-column(style='font-weight: bold;') Name
                 p.phone-column(style='font-weight: bold;') Phone
                 p.action-column(style='font-weight: bold;') Action  
-            each item in users
-                .row             
-                    p.name-user= item.name
-                    p.phone-user= item.phone
-                    a(href="/user/view_user"+item.id).action-user View
-    nav.page(aria-label='Page navigation example')
-        ul.pagination               
-            li.page-item
-                a.page-link(href='#') Previous
-            each item in totalPage
+            if(users)
+                each item in users
+                    .row             
+                        p.name-user= item.name
+                        p.phone-user= item.phone
+                        a(href="/user/view_user"+item.id).action-user View
+        if(error)
+            each item in error       
+                .alert.alert-danger= item
+    if(totalPage)
+        nav.page(aria-label='Page navigation example')
+            ul.pagination               
                 li.page-item
-                    a.page-link(href='/user/index?page='+item)= item
-            li.page-item
-                a.page-link(href='#') Next
+                    a.page-link(href="#") Previous
+                each item in totalPage
+                    li.page-item
+                        a.page-link(href='/user/index?page='+item )= item
+                li.page-item
+                    a.page-link(href="#") Next
     #footer
         #footer-head
             #footer-head-contact

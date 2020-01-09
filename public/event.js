@@ -1,8 +1,10 @@
-//Pagination
-$('#pagination-demo').twbsPagination({
-    totalPages: 16,
-    visiblePages: 5,
-    next: 'Next',
-    prev: 'Prev'
-});
+var pageitem = document.querySelectorAll('.page-item');
+
+var page = Array.prototype.slice.call(pageitem).slice(1,(pageitem.length - 1));
+
+for(let i=0; i<page.length; ++i){
+    if(i>4){
+        page[i].style.display = 'none';
+    }
+}
 
